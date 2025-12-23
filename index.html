@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Tuyến Xe Buýt TP.HCM</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="header">
+                <h1>🚌 Tìm Tuyến Xe Buýt</h1>
+                <p>Hệ thống gợi ý tuyến đi ngắn nhất - TP.HCM</p>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label>📍 Điểm đi</label>
+                    <select id="startStation">
+                        <option value="">-- Chọn trạm xuất phát --</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>📍 Điểm đến</label>
+                    <select id="endStation">
+                        <option value="">-- Chọn trạm đích --</option>
+                    </select>
+                </div>
+
+                <button class="find-btn" id="findRoutesBtn">Tìm Tuyến Đường</button>
+            </div>
+
+            <div class="results" id="results">
+                <div class="no-results">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>Chọn điểm đi và điểm đến để tìm tuyến xe buýt phù hợp</p>
+                </div>
+            </div>
+            <div class="footer">
+                © 2025 Gongcha
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div id="map"></div>
+            <div class="legend">
+                <div class="legend-title">Chú giải</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #66bb6a;"></div>
+                    <span>Tuyến đường ngắn nhất</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #F9A825;"></div>
+                    <span>Tuyến đường khác</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #42a5f5; height: 8px; width: 8px; border-radius: 50%;"></div>
+                    <span>Trạm xe buýt</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/config/stations.js"></script>
+    <script src="js/config/routes.js"></script>
+    <script src="js/core/dijkstra.js"></script>
+    <script src="js/core/routeFinder.js"></script>
+    <script src="js/ui/map.js"></script>
+    <script src="js/ui/results.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
