@@ -194,6 +194,7 @@ function initMobileSidebar() {
     function openSidebar() {
         sidebar.classList.add('open');
         overlay.classList.add('show');
+        toggleBtn.classList.add('sidebar-open');
         toggleBtn.innerHTML = '<i data-feather="x"></i>';
         if (typeof feather !== 'undefined') {
             feather.replace();
@@ -203,6 +204,7 @@ function initMobileSidebar() {
     function closeSidebar() {
         sidebar.classList.remove('open');
         overlay.classList.remove('show');
+        toggleBtn.classList.remove('sidebar-open');
         toggleBtn.innerHTML = '<i data-feather="menu"></i>';
         if (typeof feather !== 'undefined') {
             feather.replace();
@@ -224,6 +226,7 @@ function initMobileSidebar() {
         if (window.innerWidth > 768) {
             sidebar.classList.remove('open');
             overlay.classList.remove('show');
+            toggleBtn.classList.remove('sidebar-open');
             toggleBtn.innerHTML = '<i data-feather="menu"></i>';
             if (typeof feather !== 'undefined') {
                 feather.replace();

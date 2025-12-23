@@ -396,6 +396,11 @@ body {
     opacity: 1;
 }
 
+/* Toggle button moves when sidebar is open */
+.mobile-toggle-btn.sidebar-open {
+    left: calc(min(85%, 360px) - 48px - 10px);
+}
+
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
     body {
