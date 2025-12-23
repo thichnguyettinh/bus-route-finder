@@ -58,21 +58,76 @@ body {
     font-size: 14px;
 }
 
-select {
+/* Searchable Dropdown Styles */
+.searchable-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
     width: 100%;
     padding: 12px;
     border: 2px solid #bbdefb;
     border-radius: 8px;
     font-size: 14px;
     background: white;
-    cursor: pointer;
+    cursor: text;
     transition: all 0.3s;
 }
 
-select:focus {
+.search-input:focus {
     outline: none;
     border-color: #64b5f6;
     box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.1);
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #bbdefb;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1001;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-list.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    border-bottom: 1px solid #e3f2fd;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item.highlighted {
+    background: #e3f2fd;
+}
+
+.dropdown-item.selected {
+    background: #bbdefb;
+    font-weight: 600;
+}
+
+.no-results-dropdown {
+    padding: 12px;
+    text-align: center;
+    color: #757575;
+    font-size: 13px;
 }
 
 .find-btn {

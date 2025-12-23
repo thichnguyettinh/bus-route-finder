@@ -27,16 +27,22 @@
             <div class="controls">
                 <div class="input-group">
                     <label><i data-feather="map-pin" class="label-icon"></i> Điểm đi</label>
-                    <select id="startStation">
-                        <option value="">-- Chọn trạm xuất phát --</option>
-                    </select>
+                    <div class="searchable-dropdown" id="startStationDropdown">
+                        <input type="text" class="search-input" id="startStationInput"
+                            placeholder="Nhập hoặc chọn trạm xuất phát..." autocomplete="off">
+                        <input type="hidden" id="startStation">
+                        <div class="dropdown-list" id="startStationList"></div>
+                    </div>
                 </div>
 
                 <div class="input-group">
                     <label><i data-feather="navigation" class="label-icon"></i> Điểm đến</label>
-                    <select id="endStation">
-                        <option value="">-- Chọn trạm đích --</option>
-                    </select>
+                    <div class="searchable-dropdown" id="endStationDropdown">
+                        <input type="text" class="search-input" id="endStationInput"
+                            placeholder="Nhập hoặc chọn trạm đích..." autocomplete="off">
+                        <input type="hidden" id="endStation">
+                        <div class="dropdown-list" id="endStationList"></div>
+                    </div>
                 </div>
 
                 <button class="find-btn" id="findRoutesBtn"><i data-feather="search" class="btn-icon"></i> Tìm Tuyến
