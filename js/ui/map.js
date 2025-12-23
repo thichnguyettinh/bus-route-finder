@@ -10,8 +10,13 @@ class MapManager {
             minZoom: 11,
             maxZoom: 19,
             maxBounds: hcmBounds,
-            maxBoundsViscosity: 1.0
+            maxBoundsViscosity: 1.0,
+            zoomControl: false
         }).setView([10.7769, 106.7009], 13);
+
+        L.control.zoom({
+            position: 'topright'
+        }).addTo(this.map);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
