@@ -23,6 +23,11 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 1000;
+    transition: transform 0.3s ease, width 0.3s ease, margin-left 0.3s ease;
+}
+
+.sidebar.collapsed {
+    margin-left: -380px;
 }
 
 .header {
@@ -342,9 +347,10 @@ body {
     align-items: center;
 }
 
-/* Mobile Toggle Button */
+/* Mobile Toggle Button (now used for desktop too) */
 .mobile-toggle-btn {
-    display: none;
+    display: flex;
+    /* Always visible to allow desktop toggle */
     position: fixed;
     top: 15px;
     left: 15px;
@@ -360,6 +366,11 @@ body {
     transition: all 0.3s ease;
     align-items: center;
     justify-content: center;
+}
+
+/* Position when sidebar is open (Desktop) */
+.mobile-toggle-btn.sidebar-open {
+    left: calc(380px - 48px - 10px);
 }
 
 .mobile-toggle-btn:hover {
@@ -396,9 +407,11 @@ body {
     opacity: 1;
 }
 
-/* Toggle button moves when sidebar is open */
-.mobile-toggle-btn.sidebar-open {
-    left: calc(min(85%, 360px) - 48px - 10px);
+/* Toggle button moves when sidebar is open (Mobile) */
+@media screen and (max-width: 768px) {
+    .mobile-toggle-btn.sidebar-open {
+        left: calc(min(85%, 360px) - 48px - 10px);
+    }
 }
 
 /* Mobile Responsive Styles */
