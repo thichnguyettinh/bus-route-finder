@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     resultsManager = new ResultsManager(mapManager);
 
     initSearchableDropdowns();
+    initModal();
 
     bindEvents();
 
@@ -154,12 +155,12 @@ function handleFindRoutes() {
 
 
     if (!start || !end) {
-        alert('Vui lòng chọn điểm đi và điểm đến!');
+        showModal('Vui lòng chọn điểm đi và điểm đến!');
         return;
     }
 
     if (start === end) {
-        alert('Điểm đi và điểm đến không được trùng nhau!');
+        showModal('Điểm đi và điểm đến không được trùng nhau!');
         return;
     }
 
@@ -278,4 +279,31 @@ function initSidebarToggle() {
             feather.replace();
         }
     });
+}
+
+let modalOverlay;
+let modalMessage;
+
+function initModal() {
+    modalOverlay = document.getElementById('notificationModal');
+    modalMessage = document.getElementById('modalMessage');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const okBtn = document.getElementById('modalOkBtn');
+
+    function closeModal() {
+        if (modalOverlay) modalOverlay.classList.remove('show');
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (okBtn) okBtn.addEventListener('click', closeModal);
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function (e) {
+            if (e.target === modalOverlay) closeModal();
+        });
+    }
+}
+
+function showModal(message) {
+    if (modalMessage) modalMessage.textContent = message;
+    if (modalOverlay) modalOverlay.classList.add('show');
 }
