@@ -9,6 +9,9 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,35 +20,32 @@
     <div class="container">
         <div class="sidebar">
             <div class="header">
-                <h1>🚌 Tìm Tuyến Xe Buýt</h1>
+                <h1><i data-feather="map" class="header-icon"></i> Tìm Tuyến Xe Buýt</h1>
                 <p>Hệ thống gợi ý tuyến đi ngắn nhất - TP.HCM</p>
             </div>
 
             <div class="controls">
                 <div class="input-group">
-                    <label>📍 Điểm đi</label>
+                    <label><i data-feather="map-pin" class="label-icon"></i> Điểm đi</label>
                     <select id="startStation">
                         <option value="">-- Chọn trạm xuất phát --</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label>📍 Điểm đến</label>
+                    <label><i data-feather="navigation" class="label-icon"></i> Điểm đến</label>
                     <select id="endStation">
                         <option value="">-- Chọn trạm đích --</option>
                     </select>
                 </div>
 
-                <button class="find-btn" id="findRoutesBtn">Tìm Tuyến Đường</button>
+                <button class="find-btn" id="findRoutesBtn"><i data-feather="search" class="btn-icon"></i> Tìm Tuyến
+                    Đường</button>
             </div>
 
             <div class="results" id="results">
                 <div class="no-results">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path
-                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <i data-feather="map" class="no-results-icon"></i>
                     <p>Chọn điểm đi và điểm đến để tìm tuyến xe buýt phù hợp</p>
                 </div>
             </div>

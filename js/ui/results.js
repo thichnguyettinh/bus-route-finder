@@ -20,6 +20,11 @@ class ResultsManager {
         });
 
         this.resultsDiv.innerHTML = html;
+        
+        // Khởi tạo Feather Icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
 
         // Tự động hiển thị tuyến tốt nhất
         this.showRouteOnMap(0);
@@ -50,10 +55,10 @@ class ResultsManager {
                 <div class="route-path" style="font-size: 12px; margin-top: 8px;">
                     ${segmentDescriptions}
                 </div>
-                <div style="margin-top: 8px; color: #666; font-size: 12px;">
-                    🔄 ${transferText}
+                <div class="transfer-info">
+                    <i data-feather="repeat" class="info-icon"></i> ${transferText}
                 </div>
-                ${isBest ? '<div style="margin-top:8px;color:#2e7d32;font-weight:600;font-size:12px;">⭐ Tuyến ngắn nhất</div>' : ''}
+                ${isBest ? '<div class="best-route-badge"><i data-feather="award" class="info-icon"></i> Tuyến ngắn nhất</div>' : ''}
             </div>
         `;
     }
@@ -62,12 +67,15 @@ class ResultsManager {
         const defaultMessage = 'Chọn điểm đi và điểm đến để tìm tuyến xe buýt phù hợp';
         this.resultsDiv.innerHTML = `
             <div class="no-results">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <i data-feather="map" class="no-results-icon"></i>
                 <p>${message || defaultMessage}</p>
             </div>
         `;
+        
+        // Khởi tạo Feather Icons
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
     }
 
   

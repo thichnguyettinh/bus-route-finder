@@ -1,16 +1,18 @@
 let mapManager;
 let resultsManager;
 
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.addEventListener('DOMContentLoaded', function () {
+
     mapManager = new MapManager();
     resultsManager = new ResultsManager(mapManager);
-    
+
     initDropdowns();
-    
+
     bindEvents();
-    
-    console.log('✅ Ứng dụng đã khởi động thành công!');
+
+    if (typeof feather !== 'undefined') {
+        feather.replace();
+    }
 });
 
 
@@ -41,7 +43,7 @@ function bindEvents() {
 function handleFindRoutes() {
     const startSelect = document.getElementById('startStation');
     const endSelect = document.getElementById('endStation');
-    
+
     const start = startSelect.value;
     const end = endSelect.value;
 
@@ -58,8 +60,8 @@ function handleFindRoutes() {
 
 
     const routeOptions = findBusRoutes(start, end);
-    
-   
+
+
     if (routeOptions.length === 0) {
         const startName = stations[start].name;
         const endName = stations[end].name;

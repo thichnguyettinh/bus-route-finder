@@ -19,7 +19,7 @@ body {
 .sidebar {
     width: 380px;
     background: white;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -125,7 +125,7 @@ select:focus {
 }
 
 .result-item.active {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transform: scale(1.02);
 }
 
@@ -189,7 +189,7 @@ select:focus {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -221,4 +221,68 @@ select:focus {
     color: #757575;
     font-size: 13px;
     font-weight: 450;
+}
+
+/* Header icon */
+.header-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 8px;
+    stroke-width: 2.5;
+}
+
+/* Label icons */
+.label-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    stroke-width: 2.5;
+}
+
+/* Button icon */
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+    stroke-width: 2.5;
+}
+
+/* No results icon */
+.no-results-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+    stroke-width: 1;
+}
+
+/* Info icons in results */
+.info-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 4px;
+    stroke-width: 2;
+}
+
+/* Transfer info styling */
+.transfer-info {
+    margin-top: 8px;
+    color: #666;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/* Best route badge */
+.best-route-badge {
+    margin-top: 8px;
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
 }
